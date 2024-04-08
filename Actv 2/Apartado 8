@@ -1,0 +1,13 @@
+
+    delete node doc("DB_BailesDeSalon.xml")/bailesDeSalon/baile[id = 7]
+
+
+
+
+
+
+
+
+
+
+

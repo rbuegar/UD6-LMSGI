@@ -1,0 +1,7 @@
+<BailesSala2PrecioMenor35>
+{
+    for $baile in doc("DB_BailesDeSalon.xml")//baile
+    where $baile/sala = "2" and $baile/precio < 35
+    return $baile
+}
+</BailesSala2PrecioMenor35>

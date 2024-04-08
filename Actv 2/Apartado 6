@@ -1,0 +1,22 @@
+
+    let $nuevo_baile :=
+        <baile id="{ count(doc("DB_BailesDeSalon.xml")//baile) + 1 }">
+            <nombre>Foxtrot</nombre>
+            <precio>22</precio>
+            <pago>mensual</pago>
+            <plazas>12</plazas>
+            <comienzo>01/01/2012</comienzo>
+            <fin>31/07/2012</fin>
+            <profesor>Freddy Astaire</profesor>
+            <sala>3</sala>
+        </baile>
+    return
+        insert node $nuevo_baile into doc("DB_BailesDeSalon.xml")//Bailes
+
+
+
+
+
+
+
+
