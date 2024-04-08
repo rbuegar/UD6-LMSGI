@@ -1,0 +1,22 @@
+for $libro in doc("BD_Libros.xml")//libro
+return
+  <Libro>
+    <Cod_Libro>{$libro/Cod_Libro/text()}</Cod_Libro>
+    <Titulo>{$libro/Titulo/text()}</Titulo>
+    <Editorial>{$libro/Editorial/text()}</Editorial>
+    <Edicion>{$libro/Edicion/text()}</Edicion>
+    <ISBN>{$libro/ISBN/text()}</ISBN>
+    <NumPaginas>{$libro/NumPaginas/text()}</NumPaginas>
+    <Autores>
+      {
+      for $autor in $libro/Autores/autor
+      return
+        <Autor>
+          <Cod_Autor>{$autor/Cod_Autor/text()}</Cod_Autor>
+          <Nombre>{$autor/Nombre/text()}</Nombre>
+          <Apellidos>{$autor/Apellidos/text()}</Apellidos>
+          <FechaNacimiento>{$autor/FechaNacimiento/text()}</FechaNacimiento>
+        </Autor>
+      }
+    </Autores>
+  </Libro>

@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>Lista de libros</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <th>Código</th>
+      <th>Título</th>
+      <th>Editorial</th>
+      <th>Edición</th>
+      <th>ISBN</th>
+      <th>Número de páginas</th>
+      <th>Autor</th>
+     
+    </tr>
+    {
+      for $libro in /Libros/libro
+      return
+      <tr>
+        <td>{data($libro/Cod_Libro)}</td>
+        <td>{data($libro/Titulo)}</td>
+        <td>{data($libro/Editorial)}</td>
+        <td>{data($libro/Edicion)}</td>
+        <td>{data($libro/ISBN)}</td>
+        <td>{data($libro/NumPaginas)}</td>
+        <td>
+<ul>
+<li>{data($libro/Autores/autor/Nombre)}</li>
+       <li> {data($libro/Autores/autor/Apellidos)}</li>
+       <li> {data($libro/Autores/autor/FechaNacimiento)}</li>
+</ul>
+</td>
+      </tr>
+    }
+  </table>
+</body>
+</html>
